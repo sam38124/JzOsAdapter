@@ -56,7 +56,7 @@ public class GridAdapter:NSObject, UITableViewDataSource,UITableViewDelegate,UIS
         self.nib=nib
         self.spilt=spilt
         self.tb=tb
-        tb.register(UINib(nibName: "CoverCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "CoverCell")
+        tb.register(UINib(nibName: "CoverCell", bundle: Bundle.module), forCellReuseIdentifier: "CoverCell")
         tb.dataSource=self
         tb.delegate=self
         tb.reloadData()

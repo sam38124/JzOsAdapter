@@ -25,7 +25,7 @@ let package = Package(
             name: "JzOsAdapter",
             exclude: ["CoverCell.xib"],
             resources: [
-              .process("CoverCell.xib")
+              .process("Resources/CoverCell.xib")
             ]),
         .testTarget(
             name: "JzOsAdapterTests",

@@ -16,7 +16,7 @@ public class HorizontalAdapter:NSObject, UITableViewDataSource,UITableViewDelega
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: "basecell", for: indexPath) as! CoverCell
+        let cell=tableView.dequeueReusableCell(withIdentifier: "CoverCell", for: indexPath) as! CoverCell
         cell.scrollback=scrollback
         cell.position=0
         cell.width=width
@@ -42,7 +42,7 @@ public class HorizontalAdapter:NSObject, UITableViewDataSource,UITableViewDelega
         self.heght=height
         self.nib=nib
         self.tb=tb
-        tb.register(UINib(nibName: "basecell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "basecell")
+        tb.register(UINib(nibName: "CoverCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "CoverCell")
         tb.dataSource=self
         tb.delegate=self
         tb.bounces=false

@@ -38,9 +38,7 @@ public class CoverCell:UITableViewCell,UICollectionViewDelegate, UICollectionVie
             layout.itemSize.width = CGFloat(width)
         }
         collectionView.collectionViewLayout = layout
-        collectionView.backgroundColor = UIColor.white
-        
-        
+        collectionView.backgroundColor = nil
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

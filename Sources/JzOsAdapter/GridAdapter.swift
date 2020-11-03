@@ -40,14 +40,14 @@ public class GridAdapter:NSObject, UITableViewDataSource,UITableViewDelegate,UIS
     var row=0
     var heght:CGFloat=100
     var width:CGFloat=0
-    var nib=""
+    var nib=[String]()
     var id=""
     var getcell: (_ collectionView: UICollectionView, _ index: IndexPath,_ position:Int)->UICollectionViewCell
      var count:()->Int
     var spilt=0
     var tb:UITableView! = nil
     
-    public  init(tb:UITableView,width:CGFloat,height:CGFloat,count:@escaping ()->Int,spilt:Int,nib:String ,getcell:@escaping (_ collectionView: UICollectionView, _ indexPath: IndexPath,_ position:Int)->UICollectionViewCell){
+    public  init(tb:UITableView,width:CGFloat,height:CGFloat,count:@escaping ()->Int,spilt:Int,nib:[String] ,getcell:@escaping (_ collectionView: UICollectionView, _ indexPath: IndexPath,_ position:Int)->UICollectionViewCell){
         self.getcell=getcell
         self.count=count
         self.width=width

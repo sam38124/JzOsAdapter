@@ -27,13 +27,13 @@ public class HorizontalAdapter:NSObject, UITableViewDataSource,UITableViewDelega
     var row=0
     var heght:CGFloat=100
     var width:CGFloat=0
-    var nib=""
+    var nib=[String]()
     var id=""
     var getcell: (_ collectionView: UICollectionView, _ index: IndexPath,_ position:Int)->UICollectionViewCell
     var count:()->Int
     var tb:UITableView! = nil
     var scrollback:(()->Void?)?=nil
-    public  init(tb:UITableView,width:CGFloat,height:CGFloat,count:@escaping ()->Int,nib:String ,getcell:@escaping (_ collectionView: UICollectionView, _ indexPath: IndexPath,_ position:Int)->UICollectionViewCell,scrollback:@escaping ()->Void){
+    public  init(tb:UITableView,width:CGFloat,height:CGFloat,count:@escaping ()->Int,nib:[String] ,getcell:@escaping (_ collectionView: UICollectionView, _ indexPath: IndexPath,_ position:Int)->UICollectionViewCell,scrollback:@escaping ()->Void){
         self.getcell=getcell
         self.count=count
         self.width=width

@@ -11,20 +11,22 @@ import UIKit
 public class CoverCell:UITableViewCell,UICollectionViewDelegate, UICollectionViewDataSource,UIScrollViewDelegate{
     @IBOutlet var collectionView: UICollectionView!
     var itemcount=0
-    var nib=""
+    var nib=[String]()
     var height:CGFloat=0
     var width:CGFloat=0
     var position=0
     var scrollback:(()->Void?)?=nil
     var callback:((_ collectionView: UICollectionView, _ index: IndexPath,_ position:Int)->UICollectionViewCell)? = nil
     
-    public func setUP(_ count:Int,_ nib:String,_ getcell:@escaping (_ collectionView: UICollectionView, _ index: IndexPath,_ position:Int)->UICollectionViewCell,_ height:CGFloat,_ tb:UITableView){
+    public func setUP(_ count:Int,_ nib:[String],_ getcell:@escaping (_ collectionView: UICollectionView, _ index: IndexPath,_ position:Int)->UICollectionViewCell,_ height:CGFloat,_ tb:UITableView){
         itemcount=count
         callback=getcell
         self.nib=nib
         self.height=height
-        collectionView.register(UINib(nibName:nib, bundle:nil),
-                                forCellWithReuseIdentifier:nib)
+        for i in nib{
+            collectionView.register(UINib(nibName:i, bundle:nil),
+                                    forCellWithReuseIdentifier:i)
+        }
         collectionView.reloadData()
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -39,6 +41,7 @@ public class CoverCell:UITableViewCell,UICollectionViewDelegate, UICollectionVie
         }
         collectionView.collectionViewLayout = layout
         collectionView.backgroundColor = UIColor.clear
+       
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

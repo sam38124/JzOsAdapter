@@ -40,7 +40,7 @@ let cell=a.dequeueReusableCell(withIdentifier: "Place your xib what is define in
 ## Horizontal LinearLayout
 ```swift
     lazy var adapter=HorizontalAdapter(tb: tb, width:UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width/3
-    , count: {return self.item.make.count}, nib: "Cell_Make", getcell: {
+    , count: {return self.item.make.count}, nib: ["Place your xib1","Place your xib2"], getcell: {
         a,b,c in
         let cell=a.dequeueReusableCell(withReuseIdentifier: "Cell_Make", for: b) as! Cell_Make
         return cell
@@ -54,7 +54,7 @@ let cell=a.dequeueReusableCell(withIdentifier: "Place your xib what is define in
 //Replace count to your itemcount
 //Replace spilt to  how many item you want to display in per line
     lazy var adapter=GridAdapter(tb: tb, width:UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width/3
-    , count: {return self.item.make.count}, spilt: 3, nib: "Cell_Make", getcell: {
+    , count: {return self.item.make.count}, spilt: 3, nib: ["Place your xib1","Place your xib2"], getcell: {
         a,b,c in
         let cell=a.dequeueReusableCell(withReuseIdentifier: "Cell_Make", for: b) as! Cell_Make
         return cell

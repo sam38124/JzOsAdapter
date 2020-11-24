@@ -56,6 +56,7 @@ public class GridAdapter:NSObject, UITableViewDataSource,UITableViewDelegate,UIS
         self.nib=nib
         self.spilt=spilt
         self.tb=tb
+        tb.separatorStyle = .none
         tb.register(UINib(nibName: "CoverCell", bundle: Bundle.module), forCellReuseIdentifier: "CoverCell")
         tb.dataSource=self
         tb.delegate=self

@@ -44,6 +44,7 @@ public class HorizontalAdapter:NSObject, UITableViewDataSource,UITableViewDelega
         self.tb=tb
         tb.register(UINib(nibName: "CoverCell", bundle: Bundle(for: type(of: self))), forCellReuseIdentifier: "CoverCell")
         tb.dataSource=self
+        tb.separatorStyle = .none
         tb.delegate=self
         tb.bounces=false
         tb.reloadData()

@@ -31,6 +31,7 @@ public class LinearAdapter:NSObject, UITableViewDataSource,UITableViewDelegate,U
         for i in nib{
             tb.register(UINib(nibName: i, bundle: nil), forCellReuseIdentifier: i)
         }
+        tb.separatorStyle = .none
         tb.dataSource=self
         tb.delegate=self
         tb.reloadData()

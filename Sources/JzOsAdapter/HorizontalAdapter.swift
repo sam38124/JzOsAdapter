@@ -19,8 +19,9 @@ public class HorizontalAdapter:NSObject, UITableViewDataSource,UITableViewDelega
         let cell=tableView.dequeueReusableCell(withIdentifier: "CoverCell", for: indexPath) as! CoverCell
         cell.scrollback=scrollback
         cell.position=0
-        cell.width=width
-        cell.setUP(count(), nib, getcell, heght,tb)
+        cell.setUP(count(), nib, getcell, {position in
+            return ItemFrame(width: Int(self.width), height: Int(self.heght))
+        },tb)
         
         return cell
     }

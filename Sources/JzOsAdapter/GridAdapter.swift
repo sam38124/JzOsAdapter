@@ -28,11 +28,14 @@ public class GridAdapter:NSObject, UITableViewDataSource,UITableViewDelegate,UIS
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: "CoverCell", for: indexPath) as! CoverCell
         cell.position=indexPath.row*spilt
-        cell.width=width
         if(indexPath.row==row-1 && count()%spilt != 0){
-            cell.setUP(count()%spilt, nib, getcell, heght,tb)
+            cell.setUP(count()%spilt, nib, getcell, {position in
+                return ItemFrame(width: Int(self.width), height: Int(self.heght))
+            },tb)
         }else{
-            cell.setUP(spilt, nib, getcell, heght,tb)
+            cell.setUP(spilt, nib, getcell, {position in
+                return ItemFrame(width: Int(self.width), height: Int(self.heght))
+            },tb)
         }
         
         return cell

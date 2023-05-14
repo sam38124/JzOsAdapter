@@ -69,9 +69,7 @@ adapter.notifyDataSetChange()
 
 <a name="About"></a>
 # About me
-#### <font color="#0000dd"> Work for: </font><br /> 
-+ ##### <font color="#660000">【Orange Electronic】</font><br /> 
-#### <font color="#0000dd"> Position: </font><br /> 
+
 #### <font color="#0000dd"> Contact information: </font><br /> 
 +  ##### line:sam38124<br /> 
 
